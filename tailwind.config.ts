@@ -15,6 +15,11 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("@catppuccin/tailwindcss")],
+  plugins: [
+    require("@catppuccin/tailwindcss")({
+      prefix: "ctp",
+      defaultFlavour: "frappe",
+    }),
+  ],
 };
 export default config;
