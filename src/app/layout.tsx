@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const pixelCraft = localFont({
+  src: "../../public/fonts/Pixel-Craft.ttf",
+  variable: "--font-pixel-craft",
+});
+
+const retron2000 = localFont({
+  src: "../../public/fonts/Retron2000.ttf",
+  variable: "--font-retron2000",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +23,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-ctp-base`}>{children}</body>
+    <html
+      lang="en"
+      className={`${pixelCraft.variable} ${retron2000.variable} font-sans`}
+    >
+      <body className={`bg-ctp-crust`}>{children}</body>
     </html>
   );
 }
